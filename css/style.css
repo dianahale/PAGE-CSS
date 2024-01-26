@@ -116,3 +116,148 @@ body {
   padding: 14px 30px;
   border-radius: 34px;
 }
+
+/* About */
+.subtitle{
+  color: var(--color-title);
+  font-size: 2rem;
+   margin-bottom: 25px;
+}
+
+.about__paragraph{
+line-height: 1.7;
+}
+
+.about__main{
+  padding-top: 80px;
+  display: grid;
+  width: 90%;
+  margin: 0 auto;
+  gap: 1em;
+  overflow: hidden;
+  grid-template-columns: repeat(auto-fit, minmax(260px, auto));
+}
+
+.about__icons{
+  display: grid;
+  gap: 1em;
+  justify-items: center;
+  width: 260px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.about__icon{
+  width: 40px;
+}
+
+.knowledge{
+  background-color: #e5e5f7;
+  background-image:  radial-gradient(#444cf7 0.5px, transparent 0.5px), radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+  background-size: 20px 20px;
+  background-position: 0 0,10px 10px;
+  overflow: hidden;
+}
+
+.knowledge__container{
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
+  gap: 5em;
+  align-items: center;
+}
+
+.knowledge__picture{
+  max-width: 500px;
+}
+
+.knowledge__paragraph{
+  line-height: 1.7 ;
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+.knowledge__img{
+  width: 100%;
+  display: block;
+}
+
+/* Subscription */
+
+.subscription{
+  text-align: center;
+}
+
+.subcription__table{
+  padding-top: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5em;
+  justify-content: space-evenly;
+}
+
+.subcription__element{
+  background-color: #e5e5f7;
+  text-align: center;
+  border-radius: 10px;
+  width: 330px;
+  padding: 40px;
+  --color-plan-name: #696871;
+  --color-price: #1D293f;
+  --bg-cta: #5454D4;
+  --color-cta: #fff;
+  --color-items: #696871;
+}
+
+.subcription__element--better{
+  width: 370px;
+  padding: 60px 50px;
+  background-color:  rgba( 244, 0, 244, 0.3 );;
+  --color-plan-name: rgba(46, 0, 0, 0.75);
+  --color-price: #111b30;
+  --color-items: #696871;
+}
+
+.subcription__element--best{
+  background-color: #84b9ff;
+  --color-plan-name: rgba(19, 7, 124, 0.75);
+  --color-price: #111b30;
+  --color-items: #696871;
+}
+
+.plan__name{
+  color: var(--color-plan-name);
+  margin-bottom: 15px;
+  font-weight: 300;
+}
+
+.plan__price{
+  font-size: 2.5rem;
+  color: var(--color-price);
+}
+
+.plan__items{
+  margin-top: 35px;
+  display: grid;
+  gap: 1em;
+  font-weight: 300;
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+  color: var(--color-items);
+}
+
+.plan__features{
+
+}
+
+.plan__cta{
+  display: block;
+  padding: 20px 0;
+  border-radius: 10px;
+  text-decoration: none;
+  background-color: var(--bg-cta);
+  font-weight: 600;
+  box-shadow: 0 0 1px rgba(0,0,0,1.5);
+  color: var(--color-cta);
+}
+
+/* testimony */
