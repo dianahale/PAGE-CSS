@@ -245,10 +245,6 @@ line-height: 1.7;
   color: var(--color-items);
 }
 
-.plan__features{
-
-}
-
 .plan__cta{
   display: block;
   padding: 20px 0;
@@ -315,5 +311,4 @@ line-height: 1.7;
   width: 90%;
   cursor: pointer;
 }
-
 
