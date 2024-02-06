@@ -1,4 +1,6 @@
-document.getElementById('registroForm').addEventListener('submit', function(event) {
+document
+  .getElementById("registroForm")
+  .addEventListener("submit", function (event) {
     event.preventDefault(); // Prevenir el envío del formulario por defecto
 
     // Obtener datos del formulario
@@ -11,26 +13,29 @@ document.getElementById('registroForm').addEventListener('submit', function(even
     });
 
     // Realizar solicitud POST al microservicio
-    fetch('https://localhost:44306/api/Account', {
-      method: 'POST',
+    fetch("https://localhost:44306/api/Account", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json",
       },
-      body: JSON.stringify(jsonData)
+      body: JSON.stringify(jsonData),
     })
-    .then(response => {
+      .then((response) => {
         if (!response.ok) {
-          throw new Error('Error en la solicitud');
+          throw new Error("Error en la solicitud");
         }
         return response.json();
-    })
-    .then(data => {
-        alert('Registro exitoso');
-        // Limpiar el formulario
-        this.reset();
-    })
-    .catch(error => {
-        alert('Hubo un error en el registro');
-    });
-});
-
+      })
+      .then((data) => {
+        if (data.hasError) {
+          alert("Revisa los datos ingresados");
+        } else {
+          alert("Registro exitoso");
+          // Limpiar el formulario
+          this.reset();
+        }
+      })
+      .catch((error) => {
+        alert("Hubo un error en el registro");
+      });
+  });
