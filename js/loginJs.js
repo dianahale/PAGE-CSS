@@ -1,4 +1,4 @@
-document.getElementById('registroForm').addEventListener('submit', function(event) {
+document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevenir el envío del formulario por defecto
 
     // Obtener datos del formulario
@@ -11,7 +11,7 @@ document.getElementById('registroForm').addEventListener('submit', function(even
     });
 
     // Realizar solicitud POST al microservicio
-    fetch('https://localhost:44306/api/Account', {
+    fetch('https://localhost:44306/api/Account/Login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -20,17 +20,19 @@ document.getElementById('registroForm').addEventListener('submit', function(even
     })
     .then(response => {
         if (!response.ok) {
-          throw new Error('Error en la solicitud');
+          alert('Hubo un error, inténtelo mas tarde');
         }
         return response.json();
     })
     .then(data => {
-        alert('Registro exitoso');
-        // Limpiar el formulario
-        this.reset();
+      console.log(data);
+      if(data.hasError){
+        alert('Usuario o contraseña incorrectas');
+      }else{
+        window.location.href = "index.html";
+      }
     })
     .catch(error => {
-        alert('Hubo un error en el registro');
+        alert('Hubo un error, inténtelo mas tarde');
     });
-});
-
+  });
