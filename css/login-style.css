@@ -4,6 +4,7 @@ body {
     background: linear-gradient(90deg, rgba(127,148,217,1) 0%, rgba(220,167,226,1) 35%, rgba(147,218,232,1) 100%); 
     margin: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100vh;
@@ -13,7 +14,7 @@ body {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 60px;
+    padding: 4em;
     width: 500px;
     text-align: center;
 }
@@ -53,4 +54,18 @@ body {
 
 .register-container button:hover {
     background-color: #009cfe;
+}
+
+a{
+    margin-top: 2em;
+}
+
+@media only screen and (max-width: 600px) {
+
+    .register-container {
+        padding: 2em;
+        max-width: 20em;
+    }
+    
+
 }
