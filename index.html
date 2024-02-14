@@ -50,8 +50,8 @@
                 <li class="nav__items">
                     <a href="" class="nav__links">Sobre nosotros</a>
                 </li>
-                <li class="nav__items">
-                    <a href="login.html" class="nav__links">Iniciar Sesión</a>
+                <li class="nav__items" id="loginStatus">
+                    <!-- Este será el enlace "Iniciar Sesión" o "Cerrar Sesión" dependiendo del estado -->
                 </li>
 
                 <img src="./images/close.svg" alt="close logo" class="nav__close">
@@ -161,7 +161,7 @@
         <section class="knowledge__form">
             <div class="login__container container">
                 <h1>Registrarte</h1>
-                <form id="registroForm" autocomplete="off">
+                <form id="registroForm">
                     <div class="form-group">
                         <label for="name">Nombre:</label>
                         <input class="input__form" type="text" id="name" name="name" required>

@@ -12,12 +12,15 @@ document
       jsonData[key] = value;
     });
 
+    console.log(formData);
+
     // Realizar solicitud POST al microservicio
     fetch("https://localhost:44306/api/Account", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
+      withCredentials: false,
       body: JSON.stringify(jsonData),
     })
       .then((response) => {
@@ -36,6 +39,7 @@ document
         }
       })
       .catch((error) => {
+        console.log(error);
         alert("Hubo un error en el registro");
       });
   });

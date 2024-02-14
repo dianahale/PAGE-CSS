@@ -1,6 +1,5 @@
 (function(){
     const titleQuestions = [...document.querySelectorAll('.questions__title')];
-    console.log(titleQuestions);
 
     titleQuestions.forEach(question => {
         question.addEventListener('click', () =>{
@@ -36,8 +35,25 @@
 })();
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    const loginStatus = document.getElementById('loginStatus');
 
+    // Verificar si existe la cookie con el JWT
+    const jwtCookie = document.cookie.split(';').find(cookie => cookie.trim().startsWith('nombreCookie='));
 
-
-
-
+    if (jwtCookie) {
+        // Si existe la cookie con el JWT, mostrar "Cerrar Sesión"
+        const logoutLink = document.createElement('a');
+        logoutLink.href = '#'; 
+        logoutLink.textContent = 'Cerrar Sesión';
+        logoutLink.classList.add('nav__links');
+        loginStatus.appendChild(logoutLink);
+    } else {
+        // Si no existe la cookie con el JWT, mostrar "Iniciar Sesión"
+        const loginLink = document.createElement('a');
+        loginLink.href = 'login.html'; // Aquí debes colocar la URL para iniciar sesión
+        loginLink.textContent = 'Iniciar Sesión';
+        loginLink.classList.add('nav__links');
+        loginStatus.appendChild(loginLink);
+    }
+});
